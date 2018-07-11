@@ -1,3 +1,5 @@
+@import 'colors'
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section
   border: 0
   font-family: helvetica, sans
@@ -241,6 +243,14 @@ button, input[type="submit"]
     padding: 9px 15px
     display: inline-block
     background-color: #eee
+  a
+    color: $link-color
+    font-style: italic
+    font-family: Georgia
+    text-decoration: none
+    border-bottom-style: solid
+    border-bottom-color: lighten($link-color, 60%)
+    border-bottom-width: medium
 
 .message-user
   color: #666
