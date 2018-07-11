@@ -19,7 +19,7 @@ $(document).on 'turbolinks:load', ->
 # Supporting Functions:
 submit_message = () ->
   $('#message_content').on 'keydown', (event) ->
-    if event.keyCode is 13
+    if event.keyCode is 13 && !event.shiftKey
       # Select the form and click the submit button
       $('input').click()
       # Clear the message content field
