@@ -11,12 +11,12 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       $('#messages-table').append '<div class="message">' +
         '<div class="message-user">' + data.username + ":" + '</div>' +
         '<div class="message-content">' + data.content + '</div>' + '</div>'
-
+      scroll_bottom()
 
 # On-load function:
 $(document).on 'turbolinks:load', ->
   submit_message()
-
+  scroll_bottom()
 
 # Supporting Functions:
 submit_message = () ->
@@ -28,3 +28,6 @@ submit_message = () ->
       event.target.value = ''
       # Prevent the default action
       event.preventDefault()
+
+scroll_bottom = () ->
+  $('#messages').scrollTop( $('#messages')[0].scrollHeight )
