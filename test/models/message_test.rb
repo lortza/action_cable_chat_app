@@ -14,4 +14,6 @@ class MessageTest < ActiveSupport::TestCase
     @message.content = " "
     assert !@message.valid?
   end
+
+  test "should send an alert"
 end

@@ -7,7 +7,10 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    unless data.krazy_message.blank?
+    alert("You have a new mention from #{data.mentioner}.") if data.mention
+
+    # unless data.krazy_message.blank?
+    if (data.krazy_message && !data.krazy_message.blank?)
       $('#messages-table').append data.krazy_message
       scroll_bottom()
 
